@@ -7,6 +7,8 @@
 
 #include "../../include/my.h"
 
+void sort_node(llist *data, llist *end, int (*cmp)(llist *, llist *));
+
 void swap(llist *ll1, llist *ll2)
 {
     void *tmp;

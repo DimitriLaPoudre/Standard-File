@@ -31,7 +31,7 @@ void my_putnbr(long long nb);
 
 void my_putnbr_base(unsigned long long nb, char const *base);
 
-char *my_stradd(char *src, char c);
+char *my_stradd(char **src, char c);
 
 char *my_strdup(char const *src);
 
@@ -40,5 +40,7 @@ char *my_strcat(char *dest, char const *src);
 char *my_strcpy(char *dest, char const *src);
 
 int my_strcmp(char const *s1, char const *s2);
+
+char **my_str_to_word_array(char *str, char *ban);
 
 #endif /* MY_H_ */

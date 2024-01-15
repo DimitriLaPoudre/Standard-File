@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2023
 ** my_strcat
 ** File description:
-** yes la fonction tsé
+** yes bebew
 */
 
 char *my_strcat(char *dest, char const *src)
