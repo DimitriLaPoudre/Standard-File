@@ -30,4 +30,6 @@ int list_del_nodes(llist **begin, void const *data_ref);
 
 int list_function(llist *begin, void (*f)(void *));
 
+void list_sort(llist *data, llist *end, int (*cmp)(llist *, llist *))
+
 #endif /* MY_LIST_ */

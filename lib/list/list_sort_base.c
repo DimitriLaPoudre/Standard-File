@@ -7,8 +7,6 @@
 
 #include "../../include/my.h"
 
-void sort_node(llist *data, llist *end, int (*cmp)(llist *, llist *));
-
 void swap(llist *ll1, llist *ll2)
 {
     void *tmp;
@@ -36,17 +34,17 @@ static void help_sort_node(llist *ll1, llist *pivot, llist *end,
     if (cmp(pivot, ll1) < 0) {
         if (ll1 != pivot) {
             swap(ll1->prev, pivot);
-            sort_node(pivot, ll1->prev, cmp);
+            list_sort(pivot, ll1->prev, cmp);
         }
-        sort_node(ll1, end, cmp);
+        list_sort(ll1, end, cmp);
     } else {
         swap(ll1, pivot);
-        sort_node(pivot, ll1, cmp);
-        sort_node(ll1->next, end, cmp);
+        list_sort(pivot, ll1, cmp);
+        list_sort(ll1->next, end, cmp);
     }
 }
 
-void sort_node(llist *data, llist *end, int (*cmp)(llist *, llist *))
+void list_sort(llist *data, llist *end, int (*cmp)(llist *, llist *))
 {
     llist *ll1 = data;
     llist *ll2 = data;

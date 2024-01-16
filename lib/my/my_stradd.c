@@ -13,9 +13,11 @@ char *my_stradd(char **src, char c)
     int len;
     char *str;
 
-    if ((*src) == NULL) {
-        (*src) = malloc(sizeof(char));
-        (*src)[0] = '\0';
+    if (src == NULL || (*src) == NULL) {
+        str = malloc(sizeof(char) * 2);
+        str[0] = c;
+        str[1] = '\0';
+        return str;
     }
     if (c == 0)
         (*src)[0] = '\0';

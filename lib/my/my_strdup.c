@@ -18,8 +18,6 @@ char *my_strdup(char const *src)
         return NULL;
     for (len = 0; src[len] != '\0'; len++);
     str = malloc(sizeof(char) * (len + 1));
-    if (str == NULL)
-        return NULL;
     for (int i = 0; i <= len; i++)
         str[i] = src[i];
     return str;

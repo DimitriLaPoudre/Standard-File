@@ -51,23 +51,18 @@ char **my_str_to_word_array(char *str, char *ban)
 {
     int state = 0;
     char **array = NULL;
-    int index = -1;
     int array_index = 0;
     int size = count_word(str, ban);
 
-    array = ALLOC(sizeof(char *) * (size + 1));
-    for (int i = 0; i <= size; i++)
-        array[i] = NULL;
+    array = CALLOC(sizeof(char *) * (size + 1));
     for (int i = 0; str[i] != '\0'; i++) {
         if (is_ban(str[i], ban)) {
-            array[array_index] = switch_tmp_to_real(&(array[array_index]), \
-            state);
+            array[array_index]
+            = switch_tmp_to_real(&(array[array_index]), state);
             array_index += (state == 0) ? 1 : 0;
             state = (state == -1 || i == 0) ? -1 : 1;
-            index = -1;
         } else {
             state = 0;
-            index = (index == -1) ? i : index;
             array[array_index] = my_stradd(&(array[array_index]), str[i]);
         }
     }
