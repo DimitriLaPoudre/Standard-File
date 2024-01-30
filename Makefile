@@ -42,7 +42,7 @@ $(NAME): $(OBJ)
 
 $(NAME_T): fclean
 	gcc -o $(NAME_T) $(SRC_T) tests/test_lib.c --coverage \
-      -lcriterion -l csfml-graphics -l csfml-system -l csfml-audio
+      -lcriterion
 
 tests_run: $(NAME_T)
 	./unit_tests
