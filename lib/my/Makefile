@@ -22,6 +22,7 @@ SRC = my_putchar.c \
       my_strcat.c \
       my_strcpy.c \
       my_strcmp.c \
+      my_strncmp.c \
       my_str_to_word_array.c \
 
 OBJ = $(SRC:.c=.o)

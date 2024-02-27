@@ -41,6 +41,8 @@ char *my_strcpy(char *dest, char const *src);
 
 int my_strcmp(char const *s1, char const *s2);
 
+int my_strncmp(char const *s1, char const *s2, int n);
+
 char **my_str_to_word_array(char *str, char *ban);
 
 #endif /* MY_H_ */

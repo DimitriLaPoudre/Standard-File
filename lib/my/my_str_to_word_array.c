@@ -33,7 +33,7 @@ char *switch_tmp_to_real(char **tmp, int state)
 
 int count_word(char *str, char *ban)
 {
-    int state = 0;
+    int state = -1;
     int count = 0;
 
     for (int i = 0; str[i] != '\0'; i++) {
@@ -49,13 +49,13 @@ int count_word(char *str, char *ban)
 
 char **my_str_to_word_array(char *str, char *ban)
 {
-    int state = 0;
+    int state = -1;
     char **array = NULL;
     int array_index = 0;
     int size = count_word(str, ban);
 
     array = CALLOC(sizeof(char *) * (size + 1));
-    for (int i = 0; str[i] != '\0'; i++) {
+    for (int i = 0; str[i] != '\0' && size != 0; i++) {
         if (is_ban(str[i], ban)) {
             array[array_index]
             = switch_tmp_to_real(&(array[array_index]), state);
@@ -66,7 +66,7 @@ char **my_str_to_word_array(char *str, char *ban)
             array[array_index] = my_stradd(&(array[array_index]), str[i]);
         }
     }
-    if (size - 1 == array_index)
+    if (size - 1 == array_index && size != 0)
         array[array_index] = switch_tmp_to_real(&(array[array_index]), 0);
     return array;
 }

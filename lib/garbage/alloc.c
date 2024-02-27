@@ -52,7 +52,9 @@ void *alloc_malloc(void *z, size_t size)
 void *alloc_calloc(void *z, size_t size)
 {
     void *ptr = malloc(size);
+    char *ptr_memset = ptr;
 
-    memset(ptr, 0, size);
+    for (int i = 0; i < size; i++)
+        ptr_memset[i] = 0;
     return ptr;
 }
