@@ -11,6 +11,8 @@
     #include "linked_list.h"
     #include "garbage.h"
 
+#define DEBUG my_miniprintf("gay\n");
+
 void my_putchar(char c);
 
 void my_putstr(char const *str);
@@ -21,21 +23,27 @@ int my_miniprintf(char const *format, ...);
 
 int my_strlen(char const *str);
 
-long long my_getnbr(char *str);
+long my_getnbr(char *str);
 
-long long my_power(long long nb, long long p);
+char *my_nbr_to_str(int nb);
 
-long double my_power_float(long double nb, int p);
+long my_power(long nb, long p);
 
-void my_putnbr(long long nb);
+double my_power_float(double nb, long p);
 
-void my_putnbr_base(unsigned long long nb, char const *base);
+void my_putnbr(long nb);
+
+void my_putfloat(double nb);
+
+void my_putnbr_base(unsigned long nb, char const *base);
 
 char *my_stradd(char **src, char c);
 
 char *my_strdup(char const *src);
 
 char *my_strcat(char *dest, char const *src);
+
+char *my_strcat_na(char *dest, char const *src);
 
 char *my_strcpy(char *dest, char const *src);
 

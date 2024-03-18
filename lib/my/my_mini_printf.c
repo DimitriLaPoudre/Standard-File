@@ -14,8 +14,19 @@ static void print_n(va_list *list, int *len)
 
     nb = va_arg(*list, int);
     my_putnbr(nb);
-    for (; nb > 0; *len += 1)
+    for (; nb > 0; (*len)++)
         nb = nb / 10;
+}
+
+static void print_f(va_list *list, int *len)
+{
+    double nb;
+
+    nb = va_arg(*list, double);
+    my_putfloat(nb);
+    for (long long i = nb; i > 0; (*len)++)
+        i = i / 10;
+    *len += 7;
 }
 
 static void print_c(va_list *list, int *len)
@@ -33,6 +44,21 @@ static void print_s(va_list *list, int *len)
     *len += my_strlen(s);
 }
 
+static void print_t(va_list *list, int *len)
+{
+    char **tab;
+
+    tab = va_arg(*list, char **);
+    for (int i = 0; tab[i] != NULL; i++) {
+        my_putstr(tab[i]);
+        if (tab[i + 1] != NULL) {
+            my_putchar('\n');
+            (*len)++;
+        }
+        *len += my_strlen(tab[i]);
+    }
+}
+
 static void print_p(va_list *list, int *len)
 {
     my_putchar('%');
@@ -41,14 +67,12 @@ static void print_p(va_list *list, int *len)
 
 static int choose_print(va_list *list, int *len, char l, int j)
 {
-    void (*tab_f[5])(va_list *, int *) = {&print_n, &print_n\
-        , &print_c, &print_s, &print_p};
-    char *tab_ff[5] = {"d", "i", "c", "s", "%"};
+    void (*tab_f[7])(va_list *, int *) = {&print_n, &print_n,
+    &print_f, &print_c, &print_s, &print_t, &print_p};
+    char *tab_ff[7] = {"d", "i", "f", "c", "s", "t", "%"};
 
-    if (j == 5) {
-        *len += 1;
-        my_putchar('%');
-    }
+    if (j == 7)
+        print_p(list, len);
     if (l == tab_ff[j][0]) {
         tab_f[j](list, len);
         return 1;

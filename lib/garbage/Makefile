@@ -10,7 +10,9 @@ NAME = libgarbage.a
 SRC = alloc.c \
 	  alloc_sound.c \
 	  alloc_sprite.c \
-	  alloc_clock.c
+	  alloc_clock.c \
+	  gb_strdup.c \
+	  gb_str_to_word_array.c \
 
 OBJ = $(SRC:.c=.o)
 

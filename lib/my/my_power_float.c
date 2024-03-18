@@ -7,9 +7,9 @@
 
 #include "../../include/my.h"
 
-long double my_power_float(long double nb, int p)
+double my_power_float(double nb, long p)
 {
-    long double result = nb;
+    double result = nb;
 
     if (p == 0)
         return (1);

@@ -7,7 +7,7 @@
 
 #include "../../include/my.h"
 
-void my_putnbr_base(unsigned long long nb, char const *base)
+void my_putnbr_base(unsigned long nb, char const *base)
 {
     int t_base = 0;
 

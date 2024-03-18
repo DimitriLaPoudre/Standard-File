@@ -60,4 +60,8 @@ void *aclock(void *path, size_t z);
 
 void dclock(void *base);
 
+char *gb_strdup(char const *src);
+
+char **gb_str_to_word_array(char *str, char *ban);
+
 #endif

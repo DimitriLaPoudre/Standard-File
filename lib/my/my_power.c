@@ -7,9 +7,9 @@
 
 #include "../../include/my.h"
 
-long long my_power(long long nb, long long p)
+long my_power(long nb, long p)
 {
-    long long result = nb;
+    long result = nb;
 
     if (p == 0)
         return (1);

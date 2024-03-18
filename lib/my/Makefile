@@ -13,13 +13,16 @@ SRC = my_putchar.c \
       my_mini_printf.c \
       my_strlen.c \
       my_getnbr.c \
+      my_nbr_to_str.c \
       my_power.c \
       my_power_float.c \
       my_putnbr.c \
+      my_putfloat.c \
       my_putnbr_base.c \
       my_stradd.c \
       my_strdup.c \
       my_strcat.c \
+      my_strcat_na.c \
       my_strcpy.c \
       my_strcmp.c \
       my_strncmp.c \

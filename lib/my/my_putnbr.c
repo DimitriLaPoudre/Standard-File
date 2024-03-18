@@ -7,7 +7,7 @@
 
 #include "../../include/my.h"
 
-void my_putnbr(long long nb)
+void my_putnbr(long nb)
 {
     int n = 0;
 

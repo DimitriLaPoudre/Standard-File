@@ -13,13 +13,16 @@ SRC = my/my_putchar.c \
       my/my_mini_printf.c \
       my/my_strlen.c \
       my/my_getnbr.c \
+      my/my_nbr_to_str.c \
       my/my_power.c \
       my/my_power_float.c \
       my/my_putnbr.c \
+      my/my_putfloat.c \
       my/my_putnbr_base.c \
       my/my_stradd.c \
       my/my_strdup.c \
       my/my_strcat.c \
+      my/my_strcat_na.c \
       my/my_strcpy.c \
       my/my_strcmp.c \
       my/my_strncmp.c \
@@ -37,7 +40,9 @@ SRC = my/my_putchar.c \
 	garbage/alloc.c \
 	garbage/alloc_sound.c \
       garbage/alloc_sprite.c \
-	garbage/alloc_clock.c
+	garbage/alloc_clock.c \
+      garbage/gb_strdup.c \
+      garbage/gb_str_to_word_array.c \
 
 OBJ = $(SRC:.c=.o)
 

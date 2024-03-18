@@ -24,7 +24,7 @@ static char *switch_tmp_to_real(char **tmp, int state)
     if (state != 0)
         return (*tmp);
     for (len = 0; (*tmp)[len] != '\0'; len++);
-    str = malloc(sizeof(char) * (len + 1));
+    str = ALLOC(sizeof(char) * (len + 1));
     for (int i = 0; i < len + 1; i++)
         str[i] = (*tmp)[i];
     free((*tmp));
@@ -47,24 +47,14 @@ static int count_word(char *str, char *ban)
     return count;
 }
 
-static char **tmp_calloc(size_t size)
-{
-    void *ptr = malloc(size);
-    char *ptr_memset = ptr;
-
-    for (int i = 0; i < size; i++)
-        ptr_memset[i] = 0;
-    return ptr;
-}
-
-char **my_str_to_word_array(char *str, char *ban)
+char **gb_str_to_word_array(char *str, char *ban)
 {
     int state = -1;
     char **array = NULL;
     int array_index = 0;
     int size = count_word(str, ban);
 
-    array = tmp_calloc(sizeof(char *) * (size + 1));
+    array = CALLOC(sizeof(char *) * (size + 1));
     for (int i = 0; str[i] != '\0' && size != 0; i++) {
         if (is_ban(str[i], ban)) {
             array[array_index]
