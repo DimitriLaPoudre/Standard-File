@@ -10,7 +10,7 @@ NAME = libmy.a
 SRC = my_putchar.c \
       my_putstr.c \
       my_puterror.c \
-      my_mini_printf.c \
+      my_miniprintf.c \
       my_strlen.c \
       my_getnbr.c \
       my_nbr_to_str.c \
@@ -26,6 +26,7 @@ SRC = my_putchar.c \
       my_strcpy.c \
       my_strcmp.c \
       my_strncmp.c \
+      my_str_isnum.c \
       my_str_to_word_array.c \
 
 OBJ = $(SRC:.c=.o)

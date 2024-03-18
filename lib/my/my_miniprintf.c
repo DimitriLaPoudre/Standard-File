@@ -73,10 +73,11 @@ static int choose_print(va_list *list, int *len, char l, int j)
 
     if (j == 7)
         print_p(list, len);
-    if (l == tab_ff[j][0]) {
-        tab_f[j](list, len);
-        return 1;
-    }
+    else
+        if (l == tab_ff[j][0]) {
+            tab_f[j](list, len);
+            return 1;
+        }
     return 2;
 }
 
@@ -98,7 +99,7 @@ int my_miniprintf(const char *format, ...)
             c_var = 2;
             continue;
         }
-        for (int j = 0; j < 6 && c_var == 2; j++)
+        for (int j = 0; j < 8 && c_var == 2; j++)
             c_var = choose_print(&list, &len, format[i], j);
         if (c_var != 1)
             print_plus(&len, format[i]);

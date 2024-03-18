@@ -10,7 +10,7 @@ NAME = libglobal.a
 SRC = my/my_putchar.c \
       my/my_putstr.c \
       my/my_puterror.c \
-      my/my_mini_printf.c \
+      my/my_miniprintf.c \
       my/my_strlen.c \
       my/my_getnbr.c \
       my/my_nbr_to_str.c \

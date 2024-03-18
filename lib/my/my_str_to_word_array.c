@@ -38,9 +38,9 @@ static int count_word(char *str, char *ban)
 
     for (int i = 0; str[i] != '\0'; i++) {
         if (is_ban(str[i], ban))
-            state = (state == -1 || i == 0) ? -1 : 1;
+            state = (state == -1) ? -1 : 1;
         else {
-            count += (state != 0 || i == 0) ? 1 : 0;
+            count += (state != 0) ? 1 : 0;
             state = 0;
         }
     }
@@ -70,13 +70,13 @@ char **my_str_to_word_array(char *str, char *ban)
             array[array_index]
             = switch_tmp_to_real(&(array[array_index]), state);
             array_index += (state == 0) ? 1 : 0;
-            state = (state == -1 || i == 0) ? -1 : 1;
+            state = (state == -1) ? -1 : 1;
         } else {
             state = 0;
             array[array_index] = my_stradd(&(array[array_index]), str[i]);
         }
     }
-    if (size - 1 == array_index && size != 0)
+    if (size != 0 && size - 1 == array_index)
         array[array_index] = switch_tmp_to_real(&(array[array_index]), 0);
     return array;
 }

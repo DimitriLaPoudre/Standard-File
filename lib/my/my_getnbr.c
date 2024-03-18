@@ -7,7 +7,7 @@
 
 #include "../../include/my.h"
 
-long long getnbr(char *str)
+long my_getnbr(char *str)
 {
     long long nb = 0;
     int neg = 1;

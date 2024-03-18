@@ -11,7 +11,7 @@
     #include "linked_list.h"
     #include "garbage.h"
 
-#define DEBUG my_miniprintf("gay\n");
+    #define DEBUG my_miniprintf("gay\n")
 
 void my_putchar(char c);
 
@@ -50,6 +50,8 @@ char *my_strcpy(char *dest, char const *src);
 int my_strcmp(char const *s1, char const *s2);
 
 int my_strncmp(char const *s1, char const *s2, int n);
+
+int my_str_isnum(char const *str);
 
 char **my_str_to_word_array(char *str, char *ban);
 
